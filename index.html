@@ -4,16 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Correo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4facfe;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3a86f6;
+        }
+
+        #message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h2>Enviar un correo</h2>
-    <form id="emailForm">
-        <input type="email" id="to" placeholder="Correo destinatario" required>
-        <input type="text" id="subject" placeholder="Asunto" required>
-        <textarea id="text" placeholder="Mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-    <p id="message"></p>
+    <div class="container">
+        <h2>Enviar un Correo</h2>
+        <form id="emailForm">
+            <input type="email" id="to" placeholder="Correo destinatario" required>
+            <input type="text" id="subject" placeholder="Asunto" required>
+            <textarea id="text" placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="message"></p>
+    </div>
 
     <script>
         document.getElementById('emailForm').addEventListener('submit', async function(event) {
